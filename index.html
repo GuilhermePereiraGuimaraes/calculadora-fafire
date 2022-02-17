@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de expressões</title>
+    <style>
+        body{
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            font-size: 2em;
+            padding: 10px;
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+            font-size: 0.8em;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Expressões</h1>
+    <div>
+        <input type="text" name="valor_txt" id="valor_txt" placeholder="Digite aqui a expressão...">
+        <input type="button" value="Calcular Expressão" onclick="calcular()">
+    </div>
+    <div id="result">
+
+    </div>
+
+    <script>
+        function calcular() {
+            var result= document.getElementById('result')
+            var valor= document.getElementById('valor_txt')
+            var valor_txt= s=String(valor.value)
+
+            result.innerHTML=''
+            result.innerHTML=`<p>O valor da expressão é <strong>${eval(valor_txt)}</strong></p>`
+        }
+    </script>
+</body>
+</html>
