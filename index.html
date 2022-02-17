@@ -40,10 +40,18 @@
         function calcular() {
             var result= document.getElementById('result')
             var valor= document.getElementById('valor_txt')
-            var valor_txt= s=String(valor.value)
+            var valor_txt=String(valor.value)
 
             result.innerHTML=''
-            result.innerHTML=`<p>O valor da expressão é <strong>${eval(valor_txt)}</strong></p>`
+            try {
+                if (valor_txt=='') {
+                    alert('Digite alguma expressão')
+                } else {
+                    result.innerHTML=`<p>O valor da expressão é <strong>${eval(valor_txt)}</strong></p>`    
+                }
+            } catch (error) {
+                alert('Expressão inválida')
+            }
         }
     </script>
 </body>
